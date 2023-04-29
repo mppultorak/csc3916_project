@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Video from './components/Video';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className='app__videos'>
+        <Video
+          url="https://res.cloudinary.com/dxkxvfo2o/video/upload/v1608169738/video1_cvrjfm.mp4"
+          channel="nabendu82"
+          description="Macbook Air to new Windows editing beast"
+          song="I am a Windows PC"
+          likes={345}
+          shares={200}
+          messages={90}
+        />
+        <Video
+          url="https://res.cloudinary.com/dxkxvfo2o/video/upload/v1608169739/video2_mecbdo.mp4"
+          channel="thewebdev"
+          description="Tuesday morning editing on kdenlive in Windows"
+          song="Kdenlive is great"
+          likes={445}
+          shares={290}
+          messages={109}
+        />
+      </div>
     </div>
   );
 }
