@@ -30,8 +30,8 @@ class Popup extends Component {
     });
   }
 
-  postvideo() {
-    axios.post("/v2/posts", this.state.details);
+  async postvideo() {
+    await axios.post("/v2/posts", this.state.details);
   }
 
 
