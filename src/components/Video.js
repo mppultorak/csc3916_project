@@ -24,7 +24,7 @@ const Video = ({url, channel, description, song, likes, shares, messages}) => {
                 onClick = {handleVideoPress}
             >
             </video>
-            <VideoFooter channel={channel} description={description}/>
+            <VideoFooter channel={channel} description={description} song={song}/>
             <VideoSidebar likes={likes} shares={shares} messages={messages} />
         </div>
     )
