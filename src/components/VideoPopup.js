@@ -16,7 +16,7 @@ class Popup extends Component {
               song: "",
               likes: "0",
               shares: "0",
-              messages: ""
+              messages: "0"
       }
     }
   }
@@ -30,8 +30,16 @@ class Popup extends Component {
     });
   }
 
-  async postvideo() {
-    await axios.post("/v2/posts", this.state.details);
+  postvideo() {
+    axios.post("/v2/posts", this.state.details)
+      .then((reply) => {
+        console.log(reply);
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      this.props.closePopup();
   }
 
 
@@ -59,7 +67,7 @@ class Popup extends Component {
              <Form.Label>Song</Form.Label>
              <Form.Control onChange={this.updateDetails} value={this.state.details.song} type="text" placeholder="Enter song used" />
          </Form.Group>
-         <Button onClick= {() => {this.postvideo(); this.props.closePopup(); window.location.reload();}}>Post video</Button>
+         <Button onClick= {this.postvideo}>Post video</Button>
              </Form>
        <button onClick={this.props.closePopup}>Close X</button>
       </div>
